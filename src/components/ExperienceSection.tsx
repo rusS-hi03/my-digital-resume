@@ -1,7 +1,15 @@
 import { Briefcase, Calendar, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
-const experiences = [
+interface Experience {
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  description: string[];
+}
+
+const experiences: Experience[] = [
   {
     title: "SEO Intern",
     company: "Sportsdunia",

@@ -1,8 +1,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code2, Database, Wrench, Shield, Languages } from "lucide-react";
+import { Code2, Database, Wrench, Shield, Languages, LucideIcon } from "lucide-react";
 
-const skillCategories = [
+interface SkillCategory {
+  icon: LucideIcon;
+  title: string;
+  skills: string[];
+}
+
+const skillCategories: SkillCategory[] = [
   {
     icon: Code2,
     title: "Frontend",

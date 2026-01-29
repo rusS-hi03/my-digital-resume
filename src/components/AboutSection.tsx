@@ -1,7 +1,13 @@
-import { Shield, Code, Search, GraduationCap } from "lucide-react";
+import { Shield, Code, Search, GraduationCap, LucideIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
-const highlights = [
+interface Highlight {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const highlights: Highlight[] = [
   {
     icon: Shield,
     title: "Cybersecurity",

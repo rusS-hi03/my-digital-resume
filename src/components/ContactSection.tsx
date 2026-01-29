@@ -2,11 +2,24 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, Linkedin, MapPin, Send } from "lucide-react";
-import { useState } from "react";
+import { Mail, Phone, Linkedin, MapPin, Send, LucideIcon } from "lucide-react";
+import { useState, FormEvent, ChangeEvent } from "react";
 import { useToast } from "@/hooks/use-toast";
 
-const contactInfo = [
+interface ContactInfo {
+  icon: LucideIcon;
+  label: string;
+  value: string;
+  href: string | null;
+}
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const contactInfo: ContactInfo[] = [
   {
     icon: Mail,
     label: "Email",
@@ -35,13 +48,13 @@ const contactInfo = [
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     toast({
       title: "Message sent!",
@@ -76,7 +89,7 @@ const ContactSection = () => {
                     <Input
                       placeholder="Your Name"
                       value={formData.name}
-                      onChange={(e) =>
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
                       required
@@ -87,7 +100,7 @@ const ContactSection = () => {
                       type="email"
                       placeholder="Your Email"
                       value={formData.email}
-                      onChange={(e) =>
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
                       required
@@ -98,7 +111,7 @@ const ContactSection = () => {
                       placeholder="Your Message"
                       rows={5}
                       value={formData.message}
-                      onChange={(e) =>
+                      onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
                       required
