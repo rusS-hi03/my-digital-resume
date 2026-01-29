@@ -1,9 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Shield, Car } from "lucide-react";
+import { ExternalLink, Github, Shield, Car, LucideIcon } from "lucide-react";
 
-const projects = [
+interface Project {
+  icon: LucideIcon;
+  title: string;
+  period: string;
+  description: string;
+  tags: string[];
+  featured: boolean;
+}
+
+const projects: Project[] = [
   {
     icon: Car,
     title: "Campus Vehicle Access Management System (CVAMS)",
