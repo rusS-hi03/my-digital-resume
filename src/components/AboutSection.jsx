@@ -43,13 +43,13 @@ const AboutSection = () => {
           </div>
 
           {/* Highlight Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {highlights.map((item, index) => (
               <Card
                 key={index}
                 className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50"
               >
-                <CardContent className="p-6">
+                <CardContent className="p-6 text-left">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <item.icon className="w-6 h-6 text-primary" />
                   </div>
