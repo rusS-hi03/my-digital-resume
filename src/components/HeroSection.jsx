@@ -30,7 +30,7 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="container relative z-10 px-4 py-20">
+      <div className="container relative z-10 px-4 pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Greeting */}
           <p className="text-primary font-medium tracking-wide mb-4 animate-fade-in">
